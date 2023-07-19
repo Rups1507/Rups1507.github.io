@@ -1,0 +1,866 @@
+/* Global styles */
+body {
+    /* font-family:Arial, Helvetica, sans-serif; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  /* Navbar styles */
+  #nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: black;
+    z-index: 1000;
+  }
+  
+  
+  .logo img {
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+  }
+  
+  #nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /* justify-content: flex-end; */
+  }
+  
+  #nav-menu li {
+    padding: 10px;
+  }
+  
+  #nav-menu li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+  }
+  
+  #nav-menu li a:hover {
+    color: rgb(220, 20, 60);
+  }
+  
+  #resume-button-1 {
+    background-color: rgb(220, 20, 60);
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+  }
+  
+  #resume-button-1:hover {
+    color: rgb(220, 60, 80);
+    background-color: white;
+    font-size: 21px;
+    border: 2px solid rgb(220, 60, 80);
+  }
+  
+  
+  /* Sections styles */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .home-content {
+    display: flex;
+    margin-top: 40px;
+    justify-content: left;
+    /* border: 2px red solid; */
+  }
+  
+  #resume-1 {
+    text-decoration: none;
+    background-color: rgb(220, 20, 60);
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+    color: white;
+    margin-left: 5px;
+  }
+  
+  #resume-1:hover {
+    background-color: white;
+    color: rgb(220, 20, 60);
+    border: 2px solid;
+    border-color: rgb(220, 20, 60);
+  }
+  
+  .social {
+    width: 80px;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10px;
+    justify-content: space-between;
+  }
+  
+  .social a {
+    font-size: 30px;
+  }
+  
+  .social a:hover {
+    transform: scale(1.4);
+    transition: transform 0.3s;
+  }
+  
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #home {
+    /* border: 2px red solid; */
+    margin-top: 4%;
+  }
+  
+  .home-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 70px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #user-detail-name {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #user-detail-intro {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    color: #433f3f;
+    line-height: 1.5;
+    text-align: justify;
+    /* border: 2px solid red; */
+  }
+  
+  #skills {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+    margin-top: 2%;
+  }
+  
+  #skills h2 {
+    text-align: center;
+  }
+  
+  .skills-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .skills-card {
+    text-align: center;
+    padding: 20px;
+    background-color: gainsboro;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 200px;
+    height: 140px;
+    border-radius: 5%;
+    opacity: 0; /* Initial opacity to hide the cards */
+    transform: translateX(50px); /* Initial position outside the viewport */
+    animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
+  }
+  
+  .skills-card:hover {
+    background-color: white;
+  }
+  
+  .skills-card-img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+  }
+  
+  .skills-card-name {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  @keyframes slideInCard {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .skills-card {
+    animation-duration: 0.5s; /* Set the animation duration to match the delay */
+  }
+  
+  .skills-card.animate {
+    animation: slideInCard 0.5s forwards; /* Animation to slide in the card */
+  }
+  
+  
+  
+  #projects {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .project-carousel {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .project-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .project-card {
+    flex: 0 0 300px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .project-tech-stack {
+    color: rgb(220, 20, 60);
+    ;
+  }
+  
+  .techs {
+    color: rgb(62, 58, 58);
+    font-size: 14px;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+  }
+  
+  .project-image:hover {
+    margin-top: -5px;
+    transform: scale(1.15);
+    transition: transform 0.8s;
+  }
+  
+  .project-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .project-control-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deployed-links {
+    width: 90%;
+    font-size: 30px;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+  }
+  
+  .project-control-btn:hover {
+    background-color: #555;
+  }
+  
+  .github {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    /* margin-left: 100px; */
+    justify-content: center;
+  }
+  
+  
+  
+  
+  
+  
+  #contact {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-list li {
+    margin-right: 20px;
+  }
+  
+  .contact-list li:last-child {
+    margin-right: 0;
+  }
+  
+  .contact-list li a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-list li a:hover {
+    color: #666;
+  }
+  
+  #resume {
+    padding: 50px 0;
+    background-color: #fff;
+  }
+  
+  .resume-buttons {
+    text-align: center;
+  }
+  
+  .resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    /* background-color: #333; */
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #nav-menu .active {
+    font-weight: bold;
+    color: rgb(220, 20, 60);
+  }
+  
+  .home-text {
+    flex-grow: 1;
+    margin-top: 80px;
+  }
+  
+  /* Add your desired styles for the image */
+  
+  /* Adjust the styles of the job title and cursor as needed */
+  #job-title {
+    position: relative;
+    display: inline-block;
+    color: rgb(220, 20, 60);
+    margin-top: 0px;
+  }
+  
+  #job-title .cursor {
+    display: inline;
+  }
+  
+  
+  /* CSS */
+  .button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+  
+  .button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+  }
+  
+  .logo img {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1s ease;
+  }
+  
+  .logo.visible img {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  
+  /* Add the following CSS styles */
+  
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .contact-container a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #EF4765;
+    margin-right: 30px;
+  }
+  
+  .contact-half {
+    list-style: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 4s, transform 4s;
+  }
+  
+  .contact-left {
+    transform-origin: left;
+    display: flex;
+  }
+  
+  .contact-right {
+    transform-origin: right;
+    display: flex;
+  }
+  
+  .contact-half.appear {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  
+  #projects {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    text-align: center;
+  }
+  
+  .project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+  }
+  
+  .project-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(1000px);
+    transition: transform 1s, opacity 1s;
+    opacity: 0;
+  }
+  
+  .project {
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(220, 20, 60);
+    text-align: center;
+  }
+  
+  .project-description {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: justify;
+    color: black;
+  }
+  
+  .show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .project-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+  }
+  .project-deployed-link{
+    /* text-decoration: none; */
+    color: rgb(106, 189, 231);
+  }
+  
+  
+  .project-card.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .github div:nth-child(3) {
+    /* margin-left: 1000px; */
+    margin-top: 50px;
+    margin-left: 70%;
+  }
+  
+  .emptyspace {
+    min-height: 100px;
+  }
+  
+  .rights {
+    text-align: center;
+    margin-top: 150px;
+  }
+  
+  
+  
+  
+  /* dark mode toggle  */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    margin-top: 20px;
+  }
+  
+  .switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .switch .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 32px;
+    transition: background-color 0.5s ease;
+  }
+  
+  .switch .slider:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translate(0, -50%);
+    width: 31px;
+    height: 31px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.7s ease;
+    /* https://w7.pngwing.com/pngs/363/902/png-transparent-sharingan-eyes-illustration-uchiha-clan-sasuke-uchiha-obito-uchiha-apple-you-beauty-style-sharingan-smiley-emoticon-akatsuki.png */
+    background-image: url("/Rinnegan1.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
+  }
+  
+  .switch input:checked+.slider:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    /* https://e7.pngegg.com/pngimages/638/909/png-clipart-kakashi-hatake-sasuke-uchiha-obito-uchiha-sharingan-naruto-naruto-manga-logo.png*/
+    background-image: url("/Rinnegan2.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  input[type="checkbox"]:checked+.slider {
+    background-color: #3e3e3e;
+  }
+  
+  input[type="checkbox"]:checked+.slider:before {
+    transform: translateX(3px);
+    transform: translateY(-15px);
+  }
+  
+  
+  /* Dark mode */
+  body.dark-mode {
+    background-color: rgb(30, 41, 59);
+    color: #fff;
+  }
+  
+  .dark-mode #nav-menu {
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .dark-mode #nav-menu .active {
+    color: red;
+  }
+  
+  .dark-mode #nav-menu li a {
+    color: #fff;
+  }
+  
+  .dark-mode #nav-menu li a:hover {
+    color: rgb(220, 20, 60);
+  }
+  
+  .dark-mode #github-home {
+    color: #ffffff; 
+  
+  }
+  
+  .dark-mode .section-title {
+    color: aliceblue;
+  }
+  
+  .dark-mode #skills {
+    background-color: rgb(30, 41, 59);
+  }
+  
+  .dark-mode .skills-card {
+    background-color: rgb(68, 94, 135);
+  }
+  
+  .dark-mode .skills-card:hover {
+    background-color: white;
+    color: rgb(30, 41, 59);
+  }
+  
+  .dark-mode #projects {
+    background-color: rgb(30, 41, 59);
+  }
+  
+  .dark-mode .project-card {
+    background-color: rgb(30, 41, 59);
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark-mode .project-card:hover {
+    box-shadow: 0 6px 10px white;
+  }
+  
+  .dark-mode .techs {
+    color: white;
+  }
+  
+  .dark-mode .project-description {
+    color: white;
+  }
+  
+  .dark-mode #contact {
+    background-color: rgb(30, 41, 59);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Responsive styles */
+  @media all and (min-width: 700px) and (max-width:1023px) {
+    .logo{
+      width: 30px;
+      height: 50px;
+    }
+    .switch{
+      margin-left: 60px;
+      width: 70px;
+      height: 25px;
+    }
+    #nav-menu li a{
+      font-size:19px;
+      margin-right: 0px;
+    }
+  
+    .skills-card-container{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-left: 25px;
+    }
+    .skills-card{
+      width: 150px;
+      height: 130px;
+    }
+    .project-card-container{
+      display: grid;
+      margin-left: 10px;
+      grid-template-columns: repeat(2,1fr);
+    }
+    .project-card{
+      width: 300px;
+    }
+    .github{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      gap: 20px;
+      justify-content: center;
+    }
+    .github div:nth-child(2){
+      margin-left: 20px;
+    }
+    .github div:nth-child(3){
+      margin-left: 100px;
+      margin-top: 10px;
+    }
+  }
+  @media all and (min-width: 320px) and (max-width:767px) {
+    .logo{
+      width: 30px;
+      height: 50px;
+    }
+    .switch{
+      margin-left: 80px;
+      width: 70px;
+      height: 30px;
+    }
+    /* .turnoff{
+      display: none; 
+    } */
+    #nav-menu li a{
+      font-size:18px;
+      margin-right: 0px;
+    }
+    
+  
+    .home-text{
+      min-width: 400px;
+      margin-left: 30px;
+    }
+    .home-img{
+      margin-left: 80px;
+    }
+    .about-description{
+      width: 700px;
+      margin-left: 30px;
+    }
+    .resume-buttons{
+      width: 750px;
+      justify-content: center;
+    }
+  
+    #skills{
+      width: 767px;
+    }
+    .skills-card-container{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-left: 23px;
+    }
+    .skills-card{
+      width: 150px;
+      height: 130px;
+    }
+    #projects{
+      width: 700px;
+    }
+    .project-card-container{
+      display: grid;
+      margin-left: 10px;
+      grid-template-columns: repeat(2,1fr);
+    }
+    .project-card{
+      width: 300px;
+    }
+    .section-title{
+      width: 750px;
+      text-align: center;
+    }
+    .github{
+      width: 700px;
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      gap: 20px;
+      justify-content: center;
+    }
+    .github div:nth-child(1){
+      margin-left: 50px;
+    }
+    .github div:nth-child(2){
+      margin-left: 70px;
+    }
+    .github div:nth-child(3){
+      margin-left: 140px;
+      margin-top: 10px;
+    }
+    #contact{
+      width: 767px;
+    }
+    .emptyspace{
+      width: 750px;
+      text-align: center;
+    }
+  }
+
+
+
+  @media all and (min-width:150px ) and (max-width:699px){
+    
+  }
