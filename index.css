@@ -723,7 +723,10 @@ border-radius: 5px;
   color: var(--color-secondary);
 }
 
-
+.project-tech-stack{
+  padding: 5px 20px;
+  color: var(--color-secondary);
+}
 
 
 
